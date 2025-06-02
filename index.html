@@ -3,41 +3,41 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Rock-Paper-Scissor</title>
+		<script src="./myfunctions.js"></script>
 	</head>
 	<body>
 		<script>
-			console.log("Hello world");
-			console.log("Hello world");
-
-			var humanScore = 0;
-			var computerScore = 0;
-
-			function userChoice() {
-				var action = prompt('Please choose: "rock", "paper" or "scissors"');
-				var cased_action = action.toLowerCase();
-
-				if (["rock", "paper", "scissors"].includes(cased_action)) {
-					return [cased_action, false];
-				} else {
-					return [cased_action, true]; 
-				}
-			}
-			
-			function getUserChoice() {
-				while (true) {
-					let [choice, err] = userChoice();
-					if (!err) {
-						return choice;
-					} 
-					alert("Please make sure to input one of the three options.");
-				}
-			}
-
 			rps_dict = {0:"rock", 1:"paper", 2:"scissors"};
 			let getComputerChoice = () => rps_dict[Math.floor(Math.random() * 3)];
+			function playGame(rounds) {
+				var computerScore = 0;
+				var userScore = 0;
 
-			console.log(getUserChoice());
-			console.log(getComputerChoice());
+				for (let i=0; i < rounds; i++) {
+					let dir = playRound(getUserChoice(), getComputerChoice());
+					if (dir < 0) {
+						computerScore++;
+					} else if (dir > 0) {
+						userScore++;
+					}
+				}
+				console.log(`Final score: User: ${userScore} AND Computer: ${computerScore}`);
+				winningMessage = (userScore, computerScore) => `You won the game! Congratulations! \n
+				Final score: User ${userScore} vs Computer ${computerScore}`;
+				losingMessage = (userScore, computerScore) => `Sadly, you lost this game! Better luck next time! \n
+				Final score: User ${userScore} vs Computer ${computerScore}`;
+				tieMessage = (userScore, computerScore) => `What a game. Neither side let on, and it's a tie! User ${userScore}-Computer ${computerScore}`
+
+				if (userScore > computerScore) {
+					alert(winningMessage(userScore, computerScore));
+					console.log(winningMessage(userScore, computerScore));
+				} else if (userScore < computerScore) {
+				alert(losingMessage(userScore, computerScore));
+				console.log(losingMessage(userScore, computerScore));} else {
+				alert(tieMessage(userScore, computerScore));
+				console.log(tieMessage(userScore, computerScore));}
+			}
+			playGame(5);
 		</script>
 	</body>
 </html>
