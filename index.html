@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Rock-Paper-Scissor</title>
+	</head>
+	<body>
+		<script>
+			console.log("Hello world");
+			console.log("Hello world");
+
+			var humanScore = 0;
+			var computerScore = 0;
+
+			function userChoice() {
+				var action = prompt('Please choose: "rock", "paper" or "scissors"');
+				var cased_action = action.toLowerCase();
+
+				if (["rock", "paper", "scissors"].includes(cased_action)) {
+					return [cased_action, false];
+				} else {
+					return [cased_action, true]; 
+				}
+			}
+			
+			function getUserChoice() {
+				while (true) {
+					let [choice, err] = userChoice();
+					if (!err) {
+						return choice;
+					} 
+					alert("Please make sure to input one of the three options.");
+				}
+			}
+
+			rps_dict = {0:"rock", 1:"paper", 2:"scissors"};
+			let getComputerChoice = () => rps_dict[Math.floor(Math.random() * 3)];
+
+			console.log(getUserChoice());
+			console.log(getComputerChoice());
+		</script>
+	</body>
+</html>
