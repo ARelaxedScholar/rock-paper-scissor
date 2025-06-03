@@ -3,9 +3,24 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Rock-Paper-Scissor</title>
+		<link href="./styles.css" rel="stylesheet">
 		<script src="./myfunctions.js"></script>
 	</head>
 	<body>
+		<div class="body-div">
+		<section id="play-section">
+			<div id="player-choice"></div>
+			<ul>
+				<li><img class="choices" src="rock.jpg" alt="rock option"></li>
+				<li><img class="choices" src="rock.jpg" alt="rock option"></li>
+				<li><img class="choices" src="rock.jpg" alt="rock option"></li>
+				
+			</ul>
+		</section>
+		<section id="results">
+		</section>
+		</div>
+		<!--
 		<script>
 			rps_dict = {0:"rock", 1:"paper", 2:"scissors"};
 			let getComputerChoice = () => rps_dict[Math.floor(Math.random() * 3)];
@@ -38,6 +53,6 @@
 				console.log(tieMessage(userScore, computerScore));}
 			}
 			playGame(5);
-		</script>
+		</script> -->
 	</body>
 </html>
