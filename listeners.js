@@ -54,12 +54,15 @@ document.getElementById('confirmation').addEventListener("click", function() {
 	if (playerScore >= 5 || computerScore >= 5) {
 		alert("Game is over!");
 	}
-		const newDiv = document.createElement("div");
-		const newContent = document.createTextNode(`Current Score: Player ${playerScore} AND Computer ${computerScore}`);
-		newDiv.appendChild(newContent);
-		newDiv.classList.add('result');
+	const newDiv = document.createElement("div");
+	const newContent = document.createTextNode(`Current Score: Player ${playerScore} AND Computer ${computerScore}`);
+	newDiv.appendChild(newContent);
+	newDiv.classList.add('result');
+
+	newDiv.style.setProperty('--random-color-1', getRandomRgbColor());
+        newDiv.style.setProperty('--random-color-2', getRandomRgbColor());
+	sectionToAddResults.appendChild(newDiv);
+	// scroll to the bottom of the div when a new result is added (and we are overflowing)
+	sectionToAddResults.scrollTop = sectionToAddResults.scrollHeight - sectionToAddResults.clientHeight; 
 	
-newDiv.style.setProperty('--random-color-1', getRandomRgbColor());
-            newDiv.style.setProperty('--random-color-2', getRandomRgbColor());
-		sectionToAddResults.appendChild(newDiv);
 });
