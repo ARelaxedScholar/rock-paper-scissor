@@ -29,6 +29,13 @@ function rpsAndClean(userChoice, computerChoice) {
 	return playRound(userChoice, computerChoice);
 }
 
+function getRandomRgbColor() {
+                const r = Math.floor(Math.random() * 256); // 0-255
+                const g = Math.floor(Math.random() * 256); // 0-255
+                const b = Math.floor(Math.random() * 256); // 0-255
+                return `rgb(${r}, ${g}, ${b})`; // 
+}
+
 // Now the main part
 let playerScore = 0;
 let computerScore = 0;
@@ -51,5 +58,8 @@ document.getElementById('confirmation').addEventListener("click", function() {
 		const newContent = document.createTextNode(`Current Score: Player ${playerScore} AND Computer ${computerScore}`);
 		newDiv.appendChild(newContent);
 		newDiv.classList.add('result');
+	
+newDiv.style.setProperty('--random-color-1', getRandomRgbColor());
+            newDiv.style.setProperty('--random-color-2', getRandomRgbColor());
 		sectionToAddResults.appendChild(newDiv);
 });
