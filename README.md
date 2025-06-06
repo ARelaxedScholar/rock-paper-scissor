@@ -11,10 +11,10 @@ Rust is still my baby though.
 
 ## 🛠️ How to Play / Setup Locally
 
-1.  **Get the Files:** Clone this repository or download the `index.html` and `script.js` (or your JavaScript filename) files.
+1.  **Get the Files:** Clone this repository or download the `index.html` and `script.js`.
 2.  **Open in Browser:** Open the `index.html` file directly in your web browser.
 3.  **Open Developer Console:** Press `F12` (or right-click on the page and select "Inspect," then go to the "Console" tab).
-4.  **Play:** The game will run entirely within the console. Follow the prompts to make your choices.
+4.  **Play:** Select your action, lock it in, and see if you beat the computer! First to 5 wins.
 
 ## ✨ Core Features & Logic
 
