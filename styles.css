@@ -16,26 +16,27 @@
 }
 
 #player-choice {
-	height: 190px;
-	width: 90%;
+	height: 320px;
+	width: 100%;
 	margin: auto;
-	margin-top: 35px;
 	margin-bottom: 40px;
 	background: white;
+	display: flex;
+	justify-content: center;
 }
 
 #play-section > ul {
 	display: flex;
 	justify-content: space-evenly;
 	margin: 0 auto;
-	margin-bottom: 25px;
+	margin-bottom: 20px;
 	width: 85%;
 	gap: 45px;
 	list-style-type: none;
 }
 
 .choices {
-	height: 130px;
+	height: 100px;
 	width: auto;
 	border: 4px solid transparent;
 }
@@ -79,9 +80,12 @@
                 linear-gradient(to right, var(--random-color-1, lime), var(--random-color-2, turquoise)) border-box;
     border-radius: 5px;
     border: 4px solid transparent;
-    height: 70px;
+    height: 130px;
     flex: 0 0 auto;
     width: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 #results {

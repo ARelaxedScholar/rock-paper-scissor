@@ -25,19 +25,19 @@ function playRound(userChoice, computerChoice) {
 	if (userChoice == computerChoice) {
 		alert(`It's a tie! Y'all both picked ${userChoice}`);
 		console.log(`It's a tie! Y'all both picked ${userChoice}`);
-	return 0;	}
+	return [0, `It's a tie! Y'all both picked ${userChoice}`];	}
 		losingMessage = (userChoice, computerChoice) => `You lost this round: ${computerChoice} beats ${userChoice}.`;
 		winningMessage = (userChoice, computerChoice) => `You won this round! You played ${userChoice} and the computer played ${computerChoice}.`;
 		// Else either user won.
 		if ((userChoice == "paper" && computerChoice == "rock") || (userChoice == "scissors" && computerChoice == "paper") || (userChoice == "rock" && computerChoice == "scissors")) {
 		alert(winningMessage(userChoice, computerChoice));
 			console.log(winningMessage(userChoice, computerChoice));
-			return 1;
+			return [1, winningMessage(userChoice, computerChoice)];
 		}
 		else {
 			// or computer did.
 			alert(losingMessage(userChoice, computerChoice));
 			console.log(losingMessage(userChoice, computerChoice));
-			return -1;
+			return [-1, losingMessage(userChoice, computerChoice)];
 		}
 }
